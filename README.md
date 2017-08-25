@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/iaserrat/roadmapster.svg?branch=master)](https://travis-ci.org/iaserrat/roadmapster)
-
-[![Code Climate](https://codeclimate.com/github/iaserrat/roadmapster/badges/gpa.svg)](https://codeclimate.com/github/iaserrat/roadmapster)
+[![Build Status](https://travis-ci.org/iaserrat/roadmapster.svg?branch=master)](https://travis-ci.org/iaserrat/roadmapster) [![Code Climate](https://codeclimate.com/github/iaserrat/roadmapster/badges/gpa.svg)](https://codeclimate.com/github/iaserrat/roadmapster)
 
 # Roadmapster
 
