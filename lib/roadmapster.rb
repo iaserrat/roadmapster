@@ -1,5 +1,6 @@
-require "roadmapster/version"
+require 'roadmapster/version'
+require 'roadmapster/wizeline/base_api'
+require 'roadmapster/wizeline/organization'
 
 module Roadmapster
-  # Your code goes here...
 end
