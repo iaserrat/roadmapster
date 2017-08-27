@@ -20,9 +20,7 @@ module Roadmapster
       private
 
       def headers
-        {
-          authorization: "Bearer #{@api_token}",
-        }
+        { authorization: "Bearer #{@api_token}", }
       end
     end
   end

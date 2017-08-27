@@ -9,7 +9,7 @@ RSpec.describe Roadmapster::Wizeline::Organization do
   end
 
   vcr_options = { cassette_name: 'wizeline/get_organizations' }
-  it 'list all organizations for the current user', vcr: vcr_options do
+  it 'lists all organizations for the current user', vcr: vcr_options do
     organizations = @organizations.all
     expect(organizations[:data]).to be_an(Array)
   end
