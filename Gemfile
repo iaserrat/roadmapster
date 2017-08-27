@@ -1,4 +1,10 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# Specify your gem's dependencies in roadmapster.gemspec
 gemspec
+
+gem 'rest-client'
+
+group :test, :development do
+  gem 'vcr'
+  gem 'webmock'
+end
