@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://platform.wizelineroadmap.com/api/organizations/M_d4XCCpQ32XQosuGZGAiw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Host:
+      - platform.wizelineroadmap.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.11.1
+      Date:
+      - Sun, 27 Aug 2017 18:30:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA42PywrCMBRE935FydYH17S20p266Eq0RVHchKuJWmnTkiY+EP9dYxV0I27PzBmYa8NxCB5Ro2JGZSR0pMmylqUbJVALzlA/KKHQDdrQb9PejNLQC0LwO0Cp1wuaACEA+XLWF+uUU9dM50kSLyIDs+1wAslhd6qbvMgxlba1c88yr6HgqS4U26Bk1R6VeMRaGfHMUm7LY8a95WhUxi5dxkVlolU0SF+TEnNrEFUgz7GstFB1YEr+xxPf/3zydn4+adzuEape2EABAAA=
+    http_version: 
+  recorded_at: Sun, 27 Aug 2017 18:30:10 GMT
+- request:
+    method: get
+    uri: https://g3xnm.wizelineroadmap.com/api/roadmaps
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Host:
+      - g3xnm.wizelineroadmap.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.11.1
+      Date:
+      - Sun, 27 Aug 2017 18:30:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA32R0U/CMBDG3/krlj0LabuRzb0pD/hCZAtExJjlXAvUjK5ZWxAI/7s7UIfB+HLp3ff7vsulh47n+Rws+In30rw973CqzRSKQhiTl2Ijykb1ga+l8m++5aIWYAXPwaLICI26JO6y/oSxJIwSGvfi8JYyeu1426FDjwM3nmZZ+jR0ZLK4fyTZ+3Lb0lyYopbaykoh3gqSY58uppQ+i4c0cCvNt/udHq2zC7uCtUBuqqy0peCtUtVLUHIPmJyfw0Y5D2eDgU4DNksr44bz4Z28CHOa/3VrNCEkYVHCgh4NCe3H145/bz3Bx6a+os9fgcmV+MAdCyiN+BnqWmxk5cwvAclcwxKvVK4sT0PsEaPn7st3hdnKAv4p7Rw/AXWmLHwBAgAA
+    http_version: 
+  recorded_at: Sun, 27 Aug 2017 18:30:11 GMT
+recorded_with: VCR 3.0.3

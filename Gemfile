@@ -7,4 +7,5 @@ gem 'rest-client'
 group :test, :development do
   gem 'vcr'
   gem 'webmock'
+  gem 'pry'
 end
