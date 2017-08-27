@@ -18,10 +18,20 @@ module Roadmapster
         )
       end
 
+      def post(resource, payload, **options)
+        @resource_options = options
+        response = RestClient.post(
+          "#{base_endpoint(options)}#{resource}",
+          payload.to_json,
+          headers
+        )
+        JSON.parse(response.body, symbolize_names: true)
+      end
+
       private
 
       def headers
-        { authorization: "Bearer #{@api_token}", }
+        { authorization: "Bearer #{@api_token}", content_type: :json }
       end
 
       def base_endpoint(options)
