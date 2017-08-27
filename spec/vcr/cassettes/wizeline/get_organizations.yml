@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://platform.wizelineroadmap.com/api/organizations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Host:
+      - platform.wizelineroadmap.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.11.1
+      Date:
+      - Sun, 27 Aug 2017 15:14:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA61TW2vbMBh9768wfl3lKPIt89taRihstHY9knUM8yVWHLe2JHTJpaX/fVK7NtkyeoGBENJ3zvnE0ZHujjzPr0GDn3k/7Nrz7h5mW4WVLcvKyM5izHTd8RMylxQ0rSvQFvEJHqYIjxCJS0KyKM1wEmBCojj9gHGGsX+gm22dTlyE5uJbUeSTscHl4uQcF9fNeseueQ8tc8wm3LB+B9C61VxWc2CVWoKklqKloc94WzvR16qOpqenIg/JNOfKjK/Gn9q99gx6p/Qlh7oHoTSVO9CI+g0Ok+Rvh0+6Fx0+kO+PX7htf6m1UNlgoEJkFFpTpREJoIdbzmCtgjnvB48CZERnDSBtKYNwNj0R6LvOF8ns5kbEi+2EF83h/e+7iq2xchhloRtBRNIEk/+Vm5z39e17c/vYFFLyzZd8dTlhiGw/q/Lq7B+5nbOuZdS7tC3pq8FFJcEZGWU4DtJhPAoPnuY7grPzT6fzl6AqRjfupAV0ij4XhaSrlhv1B+CYlYCG7v0m3+0dbfi4+607oGmuwb0LcnT/CxbIHuSxAwAA
+    http_version: 
+  recorded_at: Sun, 27 Aug 2017 15:14:46 GMT
+recorded_with: VCR 3.0.3
