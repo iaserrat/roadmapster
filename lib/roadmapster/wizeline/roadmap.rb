@@ -21,6 +21,10 @@ module Roadmapster
         get("roadmaps/#{id}", organization_domain: @organization_domain)
       end
 
+      def by_name(name)
+        all[:data].select { |r| r[:name] == name }.first
+      end
+
       def create_unit(roadmap_id:, name:, **options)
         item_payload = {
           id: '-:PENDING:-',

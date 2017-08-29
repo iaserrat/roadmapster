@@ -29,4 +29,12 @@ RSpec.describe Roadmapster::Wizeline::Roadmap do
     new_roadmap_unit = @roadmaps.create_unit(roadmap_id: 'QfU11YeHQ3uhpdwzypMmRw', name: 'TEST_UNIT_123')
     expect(new_roadmap_unit).to be_a(Hash)
   end
+
+  vcr_options = { cassette_name: 'wizeline/get_roadmaps' }
+  it 'gets a roadmap by name', vcr: vcr_options do
+    roadmap = @roadmaps.by_name('Untitled')
+    expect(roadmap).to be_a(Hash)
+    expect(roadmap[:id]).to eq('QfU11YeHQ3uhpdwzypMmRw')
+    expect(roadmap[:name]).to eq('Untitled')
+  end
 end
