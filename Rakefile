@@ -3,4 +3,9 @@ require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :default => :spec
+desc 'serve the webhooks app using rerun and foreman'
+task :serve do
+  sh 'rerun foreman start'
+end
+
+task :default => :serve

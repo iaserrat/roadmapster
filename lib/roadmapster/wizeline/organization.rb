@@ -1,5 +1,3 @@
-require 'json'
-
 module Roadmapster
   module Wizeline
     class Organization
