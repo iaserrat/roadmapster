@@ -14,6 +14,10 @@ module Roadmapster
       def find(id)
         get("organizations/#{id}")
       end
+
+      def by_name(name)
+        all[:data].select { |o| o[:name] == name }.first
+      end
     end
   end
 end
