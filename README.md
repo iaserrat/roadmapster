@@ -6,6 +6,10 @@
 
 [Wizeline Roadmap](https://www.wizelineroadmap.com) is an excellent SaSS for fast, free (at the moment) and agile way to create beautiful roadmaps. This project is aimed to extend it's functionality by providing a way to create roadmap items based on any Github issue.
 
+### Demo
+
+![demo](https://media.giphy.com/media/3ohhwjvPhcwrcIPRIs/giphy.gif)
+
 ## Disclaimer
 
 This project is developed outside of Wizeline Inc. by using publicly accessible API's. There's no employment connection in any form by the supporters of the project and Wizeline Inc.
