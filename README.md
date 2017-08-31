@@ -2,31 +2,53 @@
 
 # Roadmapster
 
+## Motivation
+
+[Wizeline Roadmap](https://www.wizelineroadmap.com) is an excellent SaSS for fast, free (at the moment) and agile way to create beautiful roadmaps. This project is aimed to extend it's functionality by providing a way to create roadmap items based on any Github issue.
+
+## Disclaimer
+
+This project is developed outside of Wizeline Inc. by using publicly accessible API's. There's no employment connection in any form by the supporters of the project and Wizeline Inc.
+
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'roadmapster'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install roadmapster
+For now the easiest way to install is to `git clone git@github.com:iaserrat/roadmapster.git`
 
 ## Usage
 
-TODO: Write usage instructions here
+- First clone and install the required dependencies:
+
+```
+$ git clone git@github.com:iaserrat/roadmapster.git
+$ cd roadmapster && bundle install
+```
+
+- Login to [Wizeline Roadmap](https://www.wizelineroadmap.com) and create a regular user with a strong password. At this time Wizeline Roadmap doesn't support integration tokens, so you'll need to use a regular account to authenticate API requests. Create an user just for this.
+
+- Once you have your user, deploy roadmapster to your favourite cloud and create the following environment variables:
+
+```
+WIZELINE_EMAIL='themailyoucreatedtheaccountwith@example.com
+WIZELINE_PASSWORD='asupersecurepassword'
+```
+
+- Run roadmapster with `rake`
+
+- Create a Webhook in your Github repository that sends **only** issues events pointing to your roadmapster server.
+
+- Start tracking issues!
+
+### How to track an issue on Wizeline?
+
+Create an issue and put somewhere on the description the following tracker string:
+
+`[ROADMAP/<your_organization_name>/<roadmap_name>]`
+
+Replace the values accordingly. Make sure the organization and roadmap name exist and they're typed correctly.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After checking out the repo, run `bundle install` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## Contributing
 
