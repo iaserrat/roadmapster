@@ -12,7 +12,7 @@
 
 ## Disclaimer
 
-This project is developed outside of Wizeline Inc. by using publicly accessible API's. There's no employment connection in any form by the supporters of the project and Wizeline Inc.
+This project is developed outside of Wizeline Inc. by using publicly accessible API's. There's no employment connection, payment involved or any legal tie in any form by the supporters of the project and Wizeline Inc.
 
 ## Installation
 
@@ -53,6 +53,10 @@ Replace the values accordingly. Make sure the organization and roadmap name exis
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+### Regarding tests
+
+Please record all Wizeline API interactions with VCR.
 
 ## Contributing
 
