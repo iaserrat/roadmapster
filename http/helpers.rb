@@ -13,11 +13,18 @@ module Http
       Roadmapster::Webhooks::GithubIssue.new(payload)
     end
 
+    def tracker_parser(tracker)
+      tokens = tracker.gsub!('[', '').gsub!(']', '').split('/')
+      { organization_name: tokens[1], roadmap_name: tokens[2] }
+    end
+
     def create_wizeline_issue(issue)
       api_token = get_token
-      organization = Roadmapster::Wizeline::Organization.new(token: api_token).find('# TODO')
+      tracker_data = tracker_parser(issue.tracker)
+      organization = Roadmapster::Wizeline::Organization.new(token: api_token).by_name(tracker_data[:organization_name])
       roadmap = Roadmapster::Wizeline::Roadmap.new(token: api_token, organization: organization)
-      roadmap.create_unit(roadmap_id: '# TODO', name: "Github ##{issue.number}:  #{issue.clean_title}")
+      roadmap_id = roadmap.by_name(tracker_data[:roadmap_name])[:id]
+      roadmap.create_unit(roadmap_id: roadmap_id, name: "Github ##{issue.number}:  #{issue.title}")
     end
   end
 end

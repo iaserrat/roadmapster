@@ -1,7 +1,9 @@
+require 'rest-client'
+
 module Roadmapster
   module Webhooks
     class GithubIssue
-      HINT_KEYWORD = '[ROADMAP]'
+      HINT_REGEX = /\[ROADMAP\/.*\/.*\]/
 
       def initialize(webhook_payload)
         @payload = webhook_payload
@@ -19,15 +21,16 @@ module Roadmapster
       end
 
       def contains_tracker?
-        @payload[:issue][:title].include?(HINT_KEYWORD)
+        @tracker ||= HINT_REGEX.match(description)[0]
+        !@tracker.nil?
+      end
+
+      def tracker
+        @tracker
       end
 
       def action
         @payload[:action]
-      end
-
-      def clean_title
-        @payload[:issue][:title].gsub(HINT_KEYWORD, '')
       end
 
       def title
@@ -36,6 +39,10 @@ module Roadmapster
 
       def number
         @payload[:issue][:number]
+      end
+
+      def description
+        @payload[:issue][:body]
       end
     end
   end
