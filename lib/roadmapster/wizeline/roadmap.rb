@@ -7,7 +7,7 @@ module Roadmapster
     class Roadmap
       include Roadmapster::Wizeline::BaseApi
 
-      DEFAULT_TYPE_ID = '_0668tj9T5q5MTuqLxlsAA'
+      DEFAULT_TYPE_ID = 'bwhWdvctSnerDNEAnrRQMA'
 
       def initialize(token:, organization:)
         @api_token = token
@@ -27,12 +27,12 @@ module Roadmapster
         all[:data].select { |r| r[:name] == name }.first
       end
 
-      def create_unit(roadmap_id:, name:, **options)
+      def create_unit(roadmap_id:, name:, description:, **options)
         item_payload = {
           id: '-:PENDING:-',
           parent_id: options[:parent_id],
           position: options[:position] || 1,
-          unit: unit_options(name, options)
+          unit: unit_options(name, description, options)
         }
 
         post("roadmaps/#{roadmap_id}/items", item_payload, organization_domain: @organization_domain)
@@ -40,10 +40,10 @@ module Roadmapster
 
       private
 
-      def unit_options(name, options)
+      def unit_options(name, description, options)
         default_unit_options.merge({
           name: name,
-          description: options[:description],
+          description: description,
           start_date: options[:start_date],
           end_date: options[:end_date],
           owner_id: options[:owner_id],

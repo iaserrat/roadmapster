@@ -21,7 +21,7 @@ module Roadmapster
       end
 
       def contains_tracker?
-        @tracker ||= HINT_REGEX.match(description)[0]
+        @tracker ||= HINT_REGEX.match(issue_body)[0]
         !@tracker.nil?
       end
 
@@ -41,8 +41,12 @@ module Roadmapster
         @payload[:issue][:number]
       end
 
-      def description
+      def issue_body
         @payload[:issue][:body]
+      end
+
+      def description
+        @payload[:issue][:body].sub HINT_REGEX, ''
       end
     end
   end

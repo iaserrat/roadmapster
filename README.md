@@ -50,6 +50,8 @@ Create an issue and put somewhere on the description the following tracker strin
 
 Replace the values accordingly. Make sure the organization and roadmap name exist and they're typed correctly.
 
+We encourage you to put an issue template with the according organization and roadmap names so it's easily to start tracking your issues :)
+
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
