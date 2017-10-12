@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rest-client'
 
 module Roadmapster
@@ -10,10 +12,8 @@ module Roadmapster
       end
 
       def should_track?
-        if should_check? && contains_tracker?
-          return true
-        end
-        return false
+        return true if should_check? && contains_tracker?
+        false
       end
 
       def should_check?
@@ -25,9 +25,7 @@ module Roadmapster
         !@tracker.nil?
       end
 
-      def tracker
-        @tracker
-      end
+      attr_reader :tracker
 
       def action
         @payload[:action]

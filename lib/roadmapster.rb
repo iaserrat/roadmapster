@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'roadmapster/version'
 require 'roadmapster/wizeline/base_api'
 require 'roadmapster/wizeline/organization'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/json'
 require_relative 'helpers'
@@ -24,9 +26,7 @@ module Http
     post '/webhooks/issues' do
       payload = JSON.parse(request.body.read, symbolize_names: true)
       issue = issue_from_payload(payload)
-      if issue.should_track?
-        create_wizeline_issue(issue)
-      end
+      create_wizeline_issue(issue) if issue.should_track?
       json :ok
     end
   end

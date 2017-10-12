@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Roadmapster
   module Wizeline
     class Auth
@@ -10,7 +12,7 @@ module Roadmapster
       end
 
       def token
-        @token ||= post('auth/login', { email: @email, password: @password })[:auth][:token]
+        @token ||= post('auth/login', email: @email, password: @password)[:auth][:token]
       end
     end
   end
