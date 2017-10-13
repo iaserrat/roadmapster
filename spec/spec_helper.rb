@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'vcr'
 require 'roadmapster'
 require 'pry'
+require 'sucker_punch/testing/inline'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

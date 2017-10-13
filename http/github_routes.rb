@@ -23,10 +23,7 @@ module Http
 
     post '/webhooks/issues' do
       payload = JSON.parse(request.body.read, symbolize_names: true)
-      issue = issue_from_payload(payload)
-      if issue.should_track?
-        create_wizeline_issue(issue)
-      end
+      CreateWizelineIssueJob.perform_async(payload)
       json :ok
     end
   end
