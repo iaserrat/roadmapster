@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/json'
 require_relative 'helpers'
+require_relative '../jobs/create_wizeline_issue_job'
 
 module Http
   class GithubRoutes < Sinatra::Base

@@ -1,4 +1,5 @@
 require_relative '../http/helpers'
+require 'sucker_punch'
 
 class CreateWizelineIssueJob
   include SuckerPunch::Job
