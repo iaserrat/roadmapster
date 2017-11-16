@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'date'
 
 module Roadmapster
@@ -28,22 +30,39 @@ module Roadmapster
       def create_unit(roadmap_id:, name:, **options)
         item_payload = {
           id: '-:PENDING:-',
-          parent_id: options[:parent_id] || nil,
+          parent_id: options[:parent_id],
           position: options[:position] || 1,
-          unit: {
-            id: '-:PENDING:-',
-            name: name,
-            description: options[:description] || '',
-            start_date: options[:start_date] || DateTime.now.strftime("%Y-%m-%d"),
-            end_date: options[:end_date] || (DateTime.now + 7).strftime("%Y-%m-%d"),
-            owner_id: options[:owner_id] || nil,
-            type_id: DEFAULT_TYPE_ID,
-            type: options[:type] || 'Release',
-            risk_level: options[:risk_level] || 'MEDIUM_RISK',
-            color: options[:color] || nil
-          }
+          unit: unit_options(name, options)
         }
+
         post("roadmaps/#{roadmap_id}/items", item_payload, organization_domain: @organization_domain)
+      end
+
+      private
+
+      def unit_options(name, options)
+        default_unit_options.merge({
+          name: name,
+          description: options[:description],
+          start_date: options[:start_date],
+          end_date: options[:end_date],
+          owner_id: options[:owner_id],
+          type: options[:type],
+          risk_level: options[:risk_level],
+          color: options[:color]
+        }.compact)
+      end
+
+      def default_unit_options
+        {
+          id: '-:PENDING:-',
+          description: '',
+          start_date: DateTime.now.strftime('%Y-%m-%d'),
+          end_date: (DateTime.now + 7).strftime('%Y-%m-%d'),
+          type: 'Release',
+          type_id: DEFAULT_TYPE_ID,
+          risk_level: 'MEDIUM_RISK'
+        }
       end
     end
   end
