@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'vcr'
 
 RSpec.describe Roadmapster::Wizeline::Roadmap do
-
   before :each do
     @api_token = ENV['WIZELINE_API_TOKEN']
     @organization = Roadmapster::Wizeline::Organization.new(token: @api_token).find('M_d4XCCpQ32XQosuGZGAiw')

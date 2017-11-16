@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gemspec
@@ -7,10 +9,10 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 
 group :test, :development do
-  gem 'vcr'
-  gem 'webmock'
-  gem 'pry'
   gem 'foreman'
+  gem 'pry'
   gem 'rerun'
   gem 'terminal-notifier'
+  gem 'vcr'
+  gem 'webmock'
 end

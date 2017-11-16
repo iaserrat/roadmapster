@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'rest-client'
 require 'json'
 
 module Roadmapster
   module Wizeline
     module BaseApi
-
-      BASE_ENDPOINT = "https://<subdomain>.wizelineroadmap.com/api/"
+      BASE_ENDPOINT = 'https://<subdomain>.wizelineroadmap.com/api/'
 
       def get(resource, **options)
         @resource_options = options
