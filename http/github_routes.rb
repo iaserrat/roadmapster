@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/json'
 require_relative 'helpers'
+require_relative '../jobs/create_wizeline_issue_job'
 
 module Http
   class GithubRoutes < Sinatra::Base
@@ -23,10 +24,7 @@ module Http
 
     post '/webhooks/issues' do
       payload = JSON.parse(request.body.read, symbolize_names: true)
-      issue = issue_from_payload(payload)
-      if issue.should_track?
-        create_wizeline_issue(issue)
-      end
+      CreateWizelineIssueJob.perform_async(payload)
       json :ok
     end
   end
