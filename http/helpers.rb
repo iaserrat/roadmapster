@@ -16,7 +16,7 @@ module Http
     end
 
     def tracker_parser(tracker)
-      tokens = tracker.gsub!('[', '').gsub!(']', '').split('/')
+      tokens = tracker.delete!('[]').split('/')
       { organization_name: tokens[1], roadmap_name: tokens[2] }
     end
 
