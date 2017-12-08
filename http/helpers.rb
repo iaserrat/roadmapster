@@ -24,7 +24,11 @@ module Http
       organization = Roadmapster::Wizeline::Organization.new(token: api_token).by_name(tracker_data[:organization_name])
       roadmap = Roadmapster::Wizeline::Roadmap.new(token: api_token, organization: organization)
       roadmap_id = roadmap.by_name(tracker_data[:roadmap_name])[:id]
-      roadmap.create_unit(roadmap_id: roadmap_id, name: "Github ##{issue.number}:  #{issue.title}")
+      roadmap.create_unit(
+        roadmap_id: roadmap_id,
+        name: "Github ##{issue.number}:  #{issue.title}",
+        description: issue.description
+      )
     end
   end
 end

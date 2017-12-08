@@ -26,8 +26,13 @@ RSpec.describe Roadmapster::Wizeline::Roadmap do
 
   vcr_options = { cassette_name: 'wizeline/create_roadmap_units' }
   it 'creates a roadmap unit with default values', vcr: vcr_options do
-    new_roadmap_unit = @roadmaps.create_unit(roadmap_id: 'QfU11YeHQ3uhpdwzypMmRw', name: 'TEST_UNIT_123')
+    new_roadmap_unit = @roadmaps.create_unit(
+      roadmap_id: 'QfU11YeHQ3uhpdwzypMmRw',
+      name: 'TEST_UNIT_123',
+      description: 'A very reasonable description'
+    )
     expect(new_roadmap_unit).to be_a(Hash)
+    expect(new_roadmap_unit[:id]).to eq('Ei_aUbZLTVaP0B1eFZacgA')
   end
 
   vcr_options = { cassette_name: 'wizeline/get_roadmaps' }
